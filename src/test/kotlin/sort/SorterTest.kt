@@ -41,6 +41,12 @@ class SorterTest {
         arr shouldBe expected
     }
 
+    @ParameterizedTest
+    @MethodSource("providesIntArray")
+    fun `radixSort success`(arr: IntArray, expected: IntArray) {
+        Sorter.radixSort(arr)
+        arr shouldBe expected
+    }
     companion object {
         @JvmStatic
         fun providesIntArray() = listOf(
