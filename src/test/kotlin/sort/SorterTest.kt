@@ -4,12 +4,6 @@ import io.kotest.matchers.shouldBe
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
-import sort.Sorter.bubbleSort
-import sort.Sorter.exchangeSort
-import sort.Sorter.insertionSort
-import sort.Sorter.mergeSort
-import sort.Sorter.quickSort
-import sort.Sorter.radixSort
 
 class SorterTest {
 
