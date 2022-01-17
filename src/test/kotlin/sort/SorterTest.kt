@@ -4,49 +4,57 @@ import io.kotest.matchers.shouldBe
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
+import sort.Sorter.bubbleSort
+import sort.Sorter.exchangeSort
+import sort.Sorter.insertionSort
+import sort.Sorter.mergeSort
+import sort.Sorter.quickSort
+import sort.Sorter.radixSort
 
 class SorterTest {
+
     @ParameterizedTest
     @MethodSource("providesIntArray")
-    fun `bubbleSort success`(arr: IntArray, expected: IntArray) {
-        Sorter.bubbleSort(arr)
-        arr shouldBe expected
+    fun `bubbleSort success`(actual: IntArray, expected: IntArray) {
+        actual.bubbleSort()
+        actual shouldBe expected
     }
 
     @ParameterizedTest
     @MethodSource("providesIntArray")
-    fun `exchangeSort success`(arr: IntArray, expected: IntArray) {
-        Sorter.exchangeSort(arr)
-        arr shouldBe expected
+    fun `exchangeSort success`(actual: IntArray, expected: IntArray) {
+        actual.exchangeSort()
+        actual shouldBe expected
     }
 
     @ParameterizedTest
     @MethodSource("providesIntArray")
-    fun `insertionSort success`(arr: IntArray, expected: IntArray) {
-        Sorter.insertionSort(arr)
-        arr shouldBe expected
+    fun `insertionSort success`(actual: IntArray, expected: IntArray) {
+        actual.insertionSort()
+        actual shouldBe expected
     }
 
     @ParameterizedTest
     @MethodSource("providesIntArray")
-    fun `mergeSort success`(arr: IntArray, expected: IntArray) {
-        Sorter.mergeSort(arr)
-        arr shouldBe expected
+    fun `mergeSort success`(actual: IntArray, expected: IntArray) {
+        actual.mergeSort()
+        actual shouldBe expected
     }
 
     @ParameterizedTest
     @MethodSource("providesIntArray")
-    fun `quickSort success`(arr: IntArray, expected: IntArray) {
-        Sorter.quickSort(arr)
-        arr shouldBe expected
+    fun `quickSort success`(actual: IntArray, expected: IntArray) {
+        actual.quickSort()
+        actual shouldBe expected
     }
 
     @ParameterizedTest
     @MethodSource("providesIntArray")
-    fun `radixSort success`(arr: IntArray, expected: IntArray) {
-        Sorter.radixSort(arr)
-        arr shouldBe expected
+    fun `radixSort success`(actual: IntArray, expected: IntArray) {
+        actual.radixSort()
+        actual shouldBe expected
     }
+
     companion object {
         @JvmStatic
         fun providesIntArray() = listOf(
