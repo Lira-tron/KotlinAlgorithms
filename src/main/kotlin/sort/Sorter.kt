@@ -105,7 +105,7 @@ object Sorter {
         val arr = this
         val max = arr.maxOrNull() ?: 0
         var exp = 1
-        val bucket = Array(10) { mutableListOf<Int>()}
+        val bucket = Array(10) { mutableListOf<Int>() }
         while(max / exp > 0) {
             countSort(arr, bucket, exp)
             exp *= 10
