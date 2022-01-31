@@ -1,12 +1,12 @@
 package datastructures
 
-data class NodeList<T>(val value : T, var next : NodeList<T>? = null)
+data class NodeList<E>(val value : E, var next : NodeList<E>? = null)
 
-class LinkedList<T : Comparable<T>> {
-    var head : NodeList<T>? = null
-    var last : NodeList<T>? = null
+class LinkedList<E : Comparable<E>> {
+    var head : NodeList<E>? = null
+    var last : NodeList<E>? = null
 
-    fun add(value: T) : Boolean {
+    fun add(value: E) : Boolean {
         val node = NodeList(value)
         if(isEmpty()) {
             head = node
@@ -18,7 +18,7 @@ class LinkedList<T : Comparable<T>> {
         return true
     }
 
-    fun remove(value: T) : Boolean {
+    fun remove(value: E) :  Boolean {
         var curNode = head
         if(curNode?.value == value) {
             head = head?.next
@@ -40,7 +40,7 @@ class LinkedList<T : Comparable<T>> {
         return false
     }
 
-    fun reverse() : LinkedList<T> {
+    fun reverse() : LinkedList<E> {
         if(isEmpty()) {
             return this
         }
@@ -55,7 +55,7 @@ class LinkedList<T : Comparable<T>> {
         return this
     }
 
-    fun removeDuplicates() : LinkedList<T> {
+    fun removeDuplicates() : LinkedList<E> {
         if(isEmpty()) {
             return this
         }
@@ -77,11 +77,11 @@ class LinkedList<T : Comparable<T>> {
         return this
     }
 
-    fun removeDuplicatesHashSet() : LinkedList<T> {
+    fun removeDuplicatesHashSet() : LinkedList<E> {
         if(isEmpty()) {
             return this
         }
-        val visited = mutableSetOf<T>()
+        val visited = mutableSetOf<E>()
         var node = head
         while(node?.next != null) {
             visited += node.value
@@ -108,5 +108,4 @@ class LinkedList<T : Comparable<T>> {
             node = node.next
         }
     }
-
 }
