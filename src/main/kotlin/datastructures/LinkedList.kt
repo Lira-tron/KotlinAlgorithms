@@ -3,8 +3,9 @@ package datastructures
 data class NodeList<E>(val value : E, var next : NodeList<E>? = null)
 
 class LinkedList<E : Comparable<E>> {
-    var head : NodeList<E>? = null
-    var last : NodeList<E>? = null
+    //Visible for testing
+    internal var head : NodeList<E>? = null
+    internal var last : NodeList<E>? = null
 
     fun add(value: E) : Boolean {
         val node = NodeList(value)
