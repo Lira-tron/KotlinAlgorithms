@@ -1,7 +1,9 @@
 package datastructures
 
 class MinHeap<E: Comparable<E>>{
-    private val elements = mutableListOf<E>()
+    //Visible for testing
+    internal val elements = mutableListOf<E>()
+
     val size : Int
         get() = elements.size
 
