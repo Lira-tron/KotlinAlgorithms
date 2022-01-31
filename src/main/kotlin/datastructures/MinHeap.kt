@@ -16,9 +16,8 @@ class MinHeap<E: Comparable<E>>{
         if(isEmpty()) {
             throw NoSuchElementException("Heap is empty")
         }
-        val ret = elements.first()
         elements.swap(0, size - 1)
-        elements.removeLast()
+        val ret = elements.removeLast()
         bubbleDown(0)
         return ret
     }
