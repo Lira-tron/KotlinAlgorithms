@@ -6,7 +6,8 @@ class DisjointSet {
     //Visible for testing
     internal val map = mutableMapOf<String, DisjointSetNode>()
 
-    var count = 0
+    var count = 0 
+        private set
 
     fun makeSet(name: String) {
         if(!map.contains(name)) {
