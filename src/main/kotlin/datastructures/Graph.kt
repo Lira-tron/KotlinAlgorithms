@@ -26,7 +26,7 @@ class Graph {
         edges += Edge(source, destination, weight)
     }
 
-    fun getAdjancyList(v: Vertex) = graph[v]
+    fun getAdjancyList(v: Vertex) = graph[v]!!
 
     fun computeBreadthFirstSearch(v: String, action : (v: Vertex) -> Unit) {
         val root = vertexMap[v] ?: throw NoSuchElementException()
@@ -36,7 +36,7 @@ class Graph {
         while(deque.isNotEmpty()) {
             val vertex = deque.removeLast()
             action(vertex)
-            for(neighbor in graph[vertex]!!) {
+            for(neighbor in getAdjancyList(vertex)) {
                 if(neighbor.destination !in visited) {
                     deque.addFirst(neighbor.destination)
                     visited += neighbor.destination
@@ -54,7 +54,7 @@ class Graph {
         vertex?.let {
             action(vertex)
             visited += vertex
-            for(neighbor in graph[vertex]!!) {
+            for(neighbor in getAdjancyList(vertex)) {
                 if(neighbor.destination !in visited) {
                     computeDepthFirstSearch(neighbor.destination, visited, action)
                 }
