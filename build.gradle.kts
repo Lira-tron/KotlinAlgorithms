@@ -11,8 +11,9 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
-    testImplementation ("io.kotest:kotest-assertions-core:5.0.3")
+    testImplementation ("io.kotest:kotest-assertions-core:5.10.0")
 }
 
 tasks.test {
